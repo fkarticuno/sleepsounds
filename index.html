@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        input {
+            width: 100vw;
+            font-size: 3em;
+            background-color: rgb(21, 24, 24);
+            color: rgb(255, 255, 255);
+        }
+        .head (
+            height: 50px;
+        )
+        .content {
+            min-height: calc(100vh - 70px);
+        }
+        .footer {
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <input  class="head" id="playbtn" type="button" value="Play" onclick="playmusic()">
+    <input class="footer" id="stopbtn" type="button" value="Pause" onclick="stopmusic()">
+
+    <audio id="music1" src="audio\Emotional-piano-song.mp3"></audio>
+    <audio id="music2" src="audio\Insect-sounds.mp3"></audio>
+    <audio id='music3' src="audio\600-year-old-astronomical-clock-in-prague-ringing.mp3"></audio>
+    <audio id='music4' src="audio\Calming-river.mp3"></audio>
+
+    <script src="script.js"></script>
+    <script>
+        var music1 = document.getElementById('music1')
+        var music2 = document.getElementById('music2')
+        var music3 = document.getElementById('music3')
+        var music4 = document.getElementById('music4')
+        
+        music2.volume = .30
+        music3.volume = .15
+        music4.volume = .07
+
+        music1.loop = true
+        music2.loop = true
+        music3.loop = true
+        music4.loop = true
+        function playmusic() {
+            music1.play()
+            setTimeout(()=>music2.play(),12000)
+            setTimeout(()=>music3.play(),36000)
+            setTimeout(()=>music4.play(),48000)
+
+        }
+        function stopmusic() {
+            music1.currentTime = 0
+            music2.currentTime = 0
+            music3.currentTime = 0
+            music4.currentTime = 0
+            music1.pause()
+            music2.pause()
+            music3.pause()
+            music4.pause()
+        }
+        
+
+    </script>
+</body>
+</html>
